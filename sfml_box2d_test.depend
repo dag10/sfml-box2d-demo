@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1324193028 source:c:\my projects\sfml_box2d_test\main.cpp
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<memory>
+	<string>
+	<iostream>
+
