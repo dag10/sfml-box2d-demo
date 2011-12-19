@@ -8,6 +8,7 @@ using namespace std;
 
 class b2World;
 class b2Body;
+struct b2Vec2;
 
 namespace sf {
     class RenderTarget;
@@ -34,6 +35,9 @@ class Environment {
                                             bool dynamic);
 
         shared_ptr<b2World> GetWorld();
+
+        static b2Vec2 ScreenToWorld(b2Vec2 vec);
+        static b2Vec2 WorldToScreen(b2Vec2 vec);
 
     protected:
         shared_ptr<b2World> world;

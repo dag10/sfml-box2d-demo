@@ -21,12 +21,14 @@ void mainLoop();
 void render();
 void logic();
 void processEvent(sf::Event *event);
+void selectObject();
 
 /* Globals */
 
 unique_ptr<sf::RenderWindow> window;
 unique_ptr<sf::Input> input;
 unique_ptr<Environment> env;
+shared_ptr<PhysicsObject> selectedObject = nullptr;
 
 /* Settings */
 
@@ -112,5 +114,21 @@ void processEvent(sf::Event *event) {
 			if (event->Key.Code == sf::Key::Escape)
 				window->Close();
 			break;
+        case sf::Event::MouseButtonPressed:
+            if (event->MouseButton.Button == sf::Mouse::Button::Left)
+                selectObject();
+            break;
 	}
+}
+
+/*
+ * Selects an object at the cursor position
+ */
+void selectObject() {
+    if (selectedObject != nullptr) {
+        selectedObject->graphic->SetColor(sf::Color::White);
+        selectedObject = nullptr;
+    }
+
+    b2Vec2 worldCoords = env->ScreenToWorld(b2Vec2(input->GetMouseX(), input->GetMouseY()));
 }
