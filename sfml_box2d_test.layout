@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="main.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="547" topLine="0" />
+	<File name="Box2D\Collision\Shapes\b2ChainShape.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1073" topLine="0" />
+	</File>
+	<File name="Box2D\Dynamics\b2Body.h" open="0" top="0" tabpos="0">
+		<Cursor position="15295" topLine="391" />
+	</File>
+	<File name="include\Environment.h" open="1" top="0" tabpos="2">
+		<Cursor position="525" topLine="0" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="1772" topLine="67" />
+	</File>
+	<File name="src\Environment.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="608" topLine="27" />
 	</File>
 </CodeBlocks_layout_file>

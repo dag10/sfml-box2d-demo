@@ -5,8 +5,12 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include <Box2D/Box2D.h>
+#include <include/Environment.h>
 #include <memory>
+#include <vector>
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -22,6 +26,7 @@ void processEvent(sf::Event *event);
 
 unique_ptr<sf::RenderWindow> window;
 unique_ptr<sf::Input> input;
+unique_ptr<Environment> env;
 
 /* Settings */
 
@@ -42,15 +47,17 @@ int main() {
  * Init - Loads resources and initializes logic
  */
 bool init() {
-	// Init window
+	/* Window */
     if (fullscreen)
         window = unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode::GetDesktopMode(), windowTitle, sf::Style::Fullscreen));
     else
         window = unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode(800, 600, 32), windowTitle));
 
-	// Initialize everything else
-
+	/* Input */
 	input = unique_ptr<sf::Input>((sf::Input*)&window->GetInput());
+
+	/* Environment */
+    env = unique_ptr<Environment>(new Environment());
 
 	return true;
 }
@@ -60,10 +67,10 @@ bool init() {
  */
 void mainLoop() {
 	while(window->IsOpened()) {
-		// Logic
+		/* Logic */
 		logic();
 
-		// Handle window events and updating
+		/* Handle window events and updating */
 		sf::Event event;
 		while (window->GetEvent(event))
 			processEvent(&event);
@@ -75,12 +82,13 @@ void mainLoop() {
  * Renders the current frame
  */
 void render() {
-	// Clear
+	/* Clear */
 	window->Clear(sf::Color(100, 149, 237));
 
-	// TODO: Render objects
+	/* Render environment */
+	env->Render(*window, window->GetWidth(), window->GetHeight());
 
-	// Display
+	/* Display */
 	window->Display();
 }
 
@@ -88,7 +96,8 @@ void render() {
  * Main per-loop logic
  */
 void logic() {
-	// TODO: Physics logic
+    /* Step simulation */
+	env->Step(window->GetFrameTime());
 }
 
 /*
