@@ -315,3 +315,320 @@
 	<Box2D/Box2D.h>
 	<SFML/Graphics.hpp>
 
+1324246320 source:e:\projects\code\sfml_box2d_test\box2d\collision\shapes\b2chainshape.cpp
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<new>
+	<cstring>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\collision\shapes\b2circleshape.cpp
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<new>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\collision\shapes\b2edgeshape.cpp
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<new>
+
+1324665292 source:e:\projects\code\sfml_box2d_test\box2d\collision\shapes\b2polygonshape.cpp
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<new>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\collision\b2broadphase.cpp
+	<Box2D/Collision/b2BroadPhase.h>
+	<cstring>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\collision\b2collidecircle.cpp
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\collision\b2collideedge.cpp
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\collision\b2collidepolygon.cpp
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\collision\b2collision.cpp
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2Distance.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\collision\b2distance.cpp
+	<Box2D/Collision/b2Distance.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\collision\b2dynamictree.cpp
+	<Box2D/Collision/b2DynamicTree.h>
+	<cstring>
+	<cfloat>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\collision\b2timeofimpact.cpp
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2Distance.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<cstdio>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\common\b2blockallocator.cpp
+	<Box2D/Common/b2BlockAllocator.h>
+	<cstdlib>
+	<climits>
+	<cstring>
+	<memory>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\common\b2draw.cpp
+	<Box2D/Common/b2Draw.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\common\b2math.cpp
+	<Box2D/Common/b2Math.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\common\b2settings.cpp
+	<Box2D/Common/b2Settings.h>
+	<cstdlib>
+	<cstdio>
+	<cstdarg>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\common\b2stackallocator.cpp
+	<Box2D/Common/b2StackAllocator.h>
+	<Box2D/Common/b2Math.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\common\b2timer.cpp
+	<Box2D/Common/b2Timer.h>
+	<windows.h>
+	<sys/time.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\contacts\b2chainandcirclecontact.cpp
+	<Box2D/Dynamics/Contacts/b2ChainAndCircleContact.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<new>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\contacts\b2chainandpolygoncontact.cpp
+	<Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<new>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\contacts\b2circlecontact.cpp
+	<Box2D/Dynamics/Contacts/b2CircleContact.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<new>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\contacts\b2contact.cpp
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Contacts/b2CircleContact.h>
+	<Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.h>
+	<Box2D/Dynamics/Contacts/b2PolygonContact.h>
+	<Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.h>
+	<Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.h>
+	<Box2D/Dynamics/Contacts/b2ChainAndCircleContact.h>
+	<Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.h>
+	<Box2D/Dynamics/Contacts/b2ContactSolver.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2World.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\contacts\b2contactsolver.cpp
+	<Box2D/Dynamics/Contacts/b2ContactSolver.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Common/b2StackAllocator.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\contacts\b2edgeandcirclecontact.cpp
+	<Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<new>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\contacts\b2edgeandpolygoncontact.cpp
+	<Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<new>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\contacts\b2polygonandcirclecontact.cpp
+	<Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<new>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\contacts\b2polygoncontact.cpp
+	<Box2D/Dynamics/Contacts/b2PolygonContact.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<new>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\joints\b2distancejoint.cpp
+	<Box2D/Dynamics/Joints/b2DistanceJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\joints\b2frictionjoint.cpp
+	<Box2D/Dynamics/Joints/b2FrictionJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\joints\b2gearjoint.cpp
+	<Box2D/Dynamics/Joints/b2GearJoint.h>
+	<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+	<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\joints\b2joint.cpp
+	<Box2D/Dynamics/Joints/b2Joint.h>
+	<Box2D/Dynamics/Joints/b2DistanceJoint.h>
+	<Box2D/Dynamics/Joints/b2WheelJoint.h>
+	<Box2D/Dynamics/Joints/b2MouseJoint.h>
+	<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+	<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+	<Box2D/Dynamics/Joints/b2PulleyJoint.h>
+	<Box2D/Dynamics/Joints/b2GearJoint.h>
+	<Box2D/Dynamics/Joints/b2WeldJoint.h>
+	<Box2D/Dynamics/Joints/b2FrictionJoint.h>
+	<Box2D/Dynamics/Joints/b2RopeJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<new>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\joints\b2mousejoint.cpp
+	<Box2D/Dynamics/Joints/b2MouseJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\joints\b2prismaticjoint.cpp
+	<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\joints\b2pulleyjoint.cpp
+	<Box2D/Dynamics/Joints/b2PulleyJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\joints\b2revolutejoint.cpp
+	<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\joints\b2ropejoint.cpp
+	<Box2D/Dynamics/Joints/b2RopeJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\joints\b2weldjoint.cpp
+	<Box2D/Dynamics/Joints/b2WeldJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\joints\b2wheeljoint.cpp
+	<Box2D/Dynamics/Joints/b2WheelJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\b2body.cpp
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\b2contactmanager.cpp
+	<Box2D/Dynamics/b2ContactManager.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\b2fixture.cpp
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/b2BroadPhase.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Common/b2BlockAllocator.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\b2island.cpp
+	<Box2D/Collision/b2Distance.h>
+	<Box2D/Dynamics/b2Island.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Contacts/b2ContactSolver.h>
+	<Box2D/Dynamics/Joints/b2Joint.h>
+	<Box2D/Common/b2StackAllocator.h>
+	<Box2D/Common/b2Timer.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\b2world.cpp
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2Island.h>
+	<Box2D/Dynamics/Joints/b2PulleyJoint.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Contacts/b2ContactSolver.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2BroadPhase.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Common/b2Draw.h>
+	<Box2D/Common/b2Timer.h>
+	<new>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\dynamics\b2worldcallbacks.cpp
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2Fixture.h>
+
+1324244760 source:e:\projects\code\sfml_box2d_test\box2d\rope\b2rope.cpp
+	<Box2D/Rope/b2Rope.h>
+	<Box2D/Common/b2Draw.h>
+
+1324782840 source:e:\projects\code\sfml_box2d_test\main.cpp
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<Box2D/Box2D.h>
+	<include/Environment.h>
+	<memory>
+	<vector>
+	<string>
+	<iostream>
+
+1324777644 source:e:\projects\code\sfml_box2d_test\src\environment.cpp
+	<Environment.h>
+	<Box2D/Box2D.h>
+	<SFML/Graphics.hpp>
+	<iostream>
+

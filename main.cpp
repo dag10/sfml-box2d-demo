@@ -39,7 +39,7 @@ bool showingCursor = true;
 
 /* Settings */
 
-const bool fullscreen = true;
+const bool fullscreen = false;
 const string windowTitle = "SFML/Box2D Test";
 const float borderSize = 30;
 
@@ -62,7 +62,7 @@ bool init() {
     if (fullscreen)
         window = unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode::GetDesktopMode(), windowTitle, sf::Style::Fullscreen));
     else
-        window = unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode(800, 600, 32), windowTitle));
+        window = unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode(800, 600, 32), windowTitle, sf::Style::Close));
 
     /* Show/Hide Cursor */
     window->ShowMouseCursor(showingCursor);
@@ -211,6 +211,8 @@ void startDrag() {
  * Stops dragging out a rectangle
  */
 void stopDrag() {
+    if (!isDragging || !previewRect) return;
+
     sf::Vector2f topLeft = previewRect->GetPointPosition(0);
     sf::Vector2f bottomRight = previewRect->GetPointPosition(2);
 
