@@ -13,6 +13,7 @@ struct b2Vec2;
 namespace sf {
     class RenderTarget;
     class Drawable;
+    class View;
 }
 
 typedef struct {
@@ -36,8 +37,11 @@ class Environment {
 
         shared_ptr<b2World> GetWorld();
 
-        static b2Vec2 ScreenToWorld(b2Vec2 vec);
-        static b2Vec2 WorldToScreen(b2Vec2 vec);
+        static b2Vec2 ScreenToWorldPosition(b2Vec2 vec);
+        static b2Vec2 WorldToScreenPosition(b2Vec2 vec);
+
+        static b2Vec2 ScreenToWorldSize(b2Vec2 vec);
+        static b2Vec2 WorldToScreenSize(b2Vec2 vec);
 
     protected:
         shared_ptr<b2World> world;

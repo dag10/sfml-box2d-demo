@@ -22,18 +22,26 @@ void render();
 void logic();
 void processEvent(sf::Event *event);
 void selectObject();
+void startDrag();
+void stopDrag();
+void toggleCursor();
+void cleanup();
 
 /* Globals */
 
-unique_ptr<sf::RenderWindow> window;
-unique_ptr<sf::Input> input;
-unique_ptr<Environment> env;
+shared_ptr<sf::RenderWindow> window;
+shared_ptr<sf::Input> input;
+shared_ptr<Environment> env;
+shared_ptr<sf::Shape> previewRect = nullptr;
 shared_ptr<PhysicsObject> selectedObject = nullptr;
+bool isDragging = false;
+bool showingCursor = true;
 
 /* Settings */
 
-const bool fullscreen = false;
+const bool fullscreen = true;
 const string windowTitle = "SFML/Box2D Test";
+const float borderSize = 30;
 
 /*
  * Main - program entrypoint
@@ -41,6 +49,7 @@ const string windowTitle = "SFML/Box2D Test";
 int main() {
 	if (init())
 		mainLoop();
+    cleanup();
 
 	return EXIT_SUCCESS;
 }
@@ -55,11 +64,24 @@ bool init() {
     else
         window = unique_ptr<sf::RenderWindow>(new sf::RenderWindow(sf::VideoMode(800, 600, 32), windowTitle));
 
+    /* Show/Hide Cursor */
+    window->ShowMouseCursor(showingCursor);
+
 	/* Input */
-	input = unique_ptr<sf::Input>((sf::Input*)&window->GetInput());
+	input = shared_ptr<sf::Input>((sf::Input*)&window->GetInput());
 
 	/* Environment */
-    env = unique_ptr<Environment>(new Environment());
+    env = shared_ptr<Environment>(new Environment());
+
+    /* Initial render */
+    render();
+
+    /* Create static ground */
+    b2Vec2 size = env->ScreenToWorldSize(b2Vec2(window->GetWidth(), borderSize));
+    b2Vec2 pos = env->ScreenToWorldPosition(b2Vec2(0, window->GetHeight() - borderSize));
+    pos.x += size.x / 2;
+    pos.y -= size.y / 2;
+    env->CreateBox(size.x, size.y, pos.x, pos.y, false);
 
 	return true;
 }
@@ -90,6 +112,13 @@ void render() {
 	/* Render environment */
 	env->Render(*window, window->GetWidth(), window->GetHeight());
 
+    /* Reset view in case it's been changed */
+    window->SetView(window->GetDefaultView());
+
+	/* Render preview rectangle */
+	if (previewRect)
+        window->Draw(*previewRect);
+
 	/* Display */
 	window->Display();
 }
@@ -98,8 +127,21 @@ void render() {
  * Main per-loop logic
  */
 void logic() {
+    /* Get mouse position */
+	auto xMouse = input->GetMouseX(), yMouse = input->GetMouseY();
+
     /* Step simulation */
 	env->Step(window->GetFrameTime());
+
+	/* Update preview rectangle to mouse position */
+	if (isDragging) {
+		sf::Vector2f vec;
+		vec = previewRect->GetPointPosition(1);
+		previewRect->SetPointPosition(1, vec.x, yMouse);
+		previewRect->SetPointPosition(2, xMouse, yMouse);
+		vec = previewRect->GetPointPosition(3);
+		previewRect->SetPointPosition(3, xMouse, vec.y);
+	}
 }
 
 /*
@@ -111,12 +153,20 @@ void processEvent(sf::Event *event) {
 			window->Close();
 			break;
 		case sf::Event::KeyPressed:
-			if (event->Key.Code == sf::Key::Escape)
-				window->Close();
+            switch (event->Key.Code) {
+                case sf::Key::Escape:
+                    window->Close();
+                case sf::Key::Space:
+                    toggleCursor();
+            }
 			break;
         case sf::Event::MouseButtonPressed:
             if (event->MouseButton.Button == sf::Mouse::Button::Left)
-                selectObject();
+                startDrag();
+                // selectObject();
+            break;
+        case sf::Event::MouseButtonReleased:
+            stopDrag();
             break;
 	}
 }
@@ -130,5 +180,73 @@ void selectObject() {
         selectedObject = nullptr;
     }
 
-    b2Vec2 worldCoords = env->ScreenToWorld(b2Vec2(input->GetMouseX(), input->GetMouseY()));
+    b2Vec2 worldCoords = env->ScreenToWorldPosition(b2Vec2(input->GetMouseX(), input->GetMouseY()));
+}
+
+/*
+ * Starts dragging out a rectangle
+ */
+void startDrag() {
+    if (isDragging) stopDrag();
+
+    auto xMouse = input->GetMouseX(), yMouse = input->GetMouseY();
+
+    const auto outlineColor = sf::Color::Black;
+    const auto fillColor = sf::Color::White;
+
+    sf::Shape *shape = new sf::Shape();
+    shape->AddPoint(xMouse, yMouse, fillColor, outlineColor);
+    shape->AddPoint(xMouse, yMouse + 1, fillColor, outlineColor);
+    shape->AddPoint(xMouse + 1, yMouse + 1, fillColor, outlineColor);
+    shape->AddPoint(xMouse + 1, yMouse, fillColor, outlineColor);
+    shape->SetOutlineWidth(1);
+    shape->EnableFill(false);
+    shape->EnableOutline(true);
+
+    previewRect = shared_ptr<sf::Shape>(shape);
+    isDragging = true;
+}
+
+/*
+ * Stops dragging out a rectangle
+ */
+void stopDrag() {
+    sf::Vector2f topLeft = previewRect->GetPointPosition(0);
+    sf::Vector2f bottomRight = previewRect->GetPointPosition(2);
+
+    if (abs(bottomRight.x - topLeft.x) <= 1 || abs(bottomRight.y - topLeft.y) <= 1) {
+        cout << "Object too small!" << endl;
+        previewRect = nullptr;
+        isDragging = false;
+        return;
+    }
+
+    b2Vec2 topLeftWorld = env->ScreenToWorldPosition(b2Vec2(topLeft.x, topLeft.y));
+    b2Vec2 bottomRightWorld = env->ScreenToWorldPosition(b2Vec2(bottomRight.x, bottomRight.y));
+
+    float boxX = (topLeftWorld.x + bottomRightWorld.x) / 2;
+    float boxY = (topLeftWorld.y + bottomRightWorld.y) / 2;
+    float boxWidth = abs(bottomRightWorld.x - topLeftWorld.x);
+    float boxHeight = abs(topLeftWorld.y - bottomRightWorld.y);
+
+    cout << "Created BOX: (" << boxX << ", " << boxY << ") Size: " << boxWidth << " x " << boxHeight << endl;
+
+    env->CreateBox(boxWidth, boxHeight, boxX, boxY, true);
+
+    previewRect = nullptr;
+    isDragging = false;
+}
+
+/*
+ * Toggles showing the mouse cursor
+ */
+void toggleCursor() {
+    window->ShowMouseCursor(showingCursor = !showingCursor);
+}
+
+/*
+ * Cleans up neccesary objects
+ */
+void cleanup() {
+    cout << "Cleaning up..." << endl;
 }
