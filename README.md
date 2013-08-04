@@ -7,7 +7,7 @@ You can draw out rectangles with your mouse, which become physics objects. You c
 
 [Download the executable](https://github.com/dag10/sfml-box2d-demo/releases/tag/v1.0) to try it out!
 
-Also check out the original [blog post](http://minipenguin.com/?p=582).
+#### Also check out the original [blog post](http://minipenguin.com/?p=582).
 ---
 
 ![Screenshot](http://minipenguin.com/wp-content/uploads/2011/12/sfml_box2d_test_screenshot_dominoes_small.png)
